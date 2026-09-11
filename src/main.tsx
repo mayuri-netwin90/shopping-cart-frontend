@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/client/react';
 import { Provider } from 'react-redux';
 import { client } from './apolloClient';
 import { store } from './store';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from "./context/CartProvider";
 import App from './App.tsx';
 import './index.css';
 

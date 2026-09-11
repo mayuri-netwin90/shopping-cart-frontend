@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useCart } from '../context/CartContext';
+import { useCart } from "../context/useCart";
 import { toggleCartDrawer } from '../store/uiSlice';
 
 export function Header() {

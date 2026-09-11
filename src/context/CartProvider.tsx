@@ -1,8 +1,13 @@
 import type { ReactNode } from "react";
 import { gql } from "@apollo/client";
 import { useMutation, useQuery } from "@apollo/client/react";
+import type { CartItem } from "../types";
 import { CartContext } from "./CartContext";
 import { sessionId } from "./cartSession";
+
+interface MyCartQuery {
+  myCart: CartItem[];
+}
 
 const MY_CART = gql`
   query MyCart($sessionId: String!) {
@@ -55,7 +60,7 @@ const UPDATE_CART_QUANTITY = gql`
 `;
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const { data, refetch } = useQuery(MY_CART, {
+  const { data, refetch } = useQuery<MyCartQuery>(MY_CART, {
     variables: {
       sessionId,
     },

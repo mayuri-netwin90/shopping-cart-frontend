@@ -1,33 +1,37 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-interface UiState {
+export interface UiState {
   selectedCategory: string;
   searchQuery: string;
   cartDrawerOpen: boolean;
 }
 
 const initialState: UiState = {
-  selectedCategory: 'All',
-  searchQuery: '',
+  selectedCategory: "All",
+  searchQuery: "",
   cartDrawerOpen: false,
 };
 
 const uiSlice = createSlice({
-  name: 'ui',
+  name: "ui",
   initialState,
   reducers: {
     setSelectedCategory: (state, action: PayloadAction<string>) => {
       state.selectedCategory = action.payload;
     },
+
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
+
     openCartDrawer: (state) => {
       state.cartDrawerOpen = true;
     },
+
     closeCartDrawer: (state) => {
       state.cartDrawerOpen = false;
     },
+
     toggleCartDrawer: (state) => {
       state.cartDrawerOpen = !state.cartDrawerOpen;
     },

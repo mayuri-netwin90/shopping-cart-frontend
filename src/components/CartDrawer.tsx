@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from "../context/useCart";
 import { closeCartDrawer } from '../store/uiSlice';
 import type { RootState } from '../store';
 

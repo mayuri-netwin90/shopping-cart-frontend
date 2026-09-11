@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client/react";
 import type { Product } from "../types";
-import { sessionId, useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
+import { sessionId } from "../context/cartSession";
 
 const ADD_TO_CART = gql`
   mutation AddToCart($sessionId: String!, $productId: ID!) {
