@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useCart } from '../context/CartContext';
 import { toggleCartDrawer } from '../store/uiSlice';
-import type { RootState } from '../store';
 
 export function Header() {
   const { cartItems } = useCart();
